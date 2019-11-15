@@ -40,7 +40,7 @@ CREATE TABLE `employees` (
   CONSTRAINT `employees_team_id` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`)
 );
 
-CREATE TABLE `customer_projectset` (
+CREATE TABLE `customer_projects` (
   `customer_id` INT NOT NULL,
   `project_id` INT NOT NULL,
   PRIMARY KEY (`customer_id`,`project_id`),
@@ -50,7 +50,7 @@ CREATE TABLE `customer_projectset` (
   CONSTRAINT `customer_projectset_project_id` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`)
 );
 
-CREATE TABLE `employee_skillset` (
+CREATE TABLE `employee_skills` (
   `employee_id` INT NOT NULL,
   `skill_id` INT NOT NULL,
   PRIMARY KEY (`employee_id`,`skill_id`),
@@ -60,7 +60,7 @@ CREATE TABLE `employee_skillset` (
   CONSTRAINT `employee_skillset_skill_id` FOREIGN KEY (`skill_id`) REFERENCES `skills` (`id`)
 );
 
-CREATE TABLE `project_teamset` (
+CREATE TABLE `project_teams` (
   `project_id` INT NOT NULL,
   `team_id` INT NOT NULL,
   PRIMARY KEY (`project_id`,`team_id`),
