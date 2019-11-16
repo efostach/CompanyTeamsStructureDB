@@ -3,29 +3,25 @@ CREATE DATABASE company_teams_structure;
 CREATE TABLE `customers` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`)
+  PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `projects` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`)
+  PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `skills` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`)
+  PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `teams` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`)
+  PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `employees` (
@@ -34,8 +30,7 @@ CREATE TABLE `employees` (
   `last_name` VARCHAR(255) NOT NULL,
   `team_id` INT NOT NULL,
   `work_experience` INT NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
+  PRIMARY KEY (`id`)
   KEY `team_id_idx` (`team_id`),
   CONSTRAINT `employees_team_id` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`)
 );
@@ -68,7 +63,3 @@ CREATE TABLE `project_teams` (
   CONSTRAINT `project_teamset_project_id` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`),
   CONSTRAINT `project_teamset_team_id` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`)
 );
-
-
-
-
